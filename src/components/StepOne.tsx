@@ -6,19 +6,16 @@ import InputField from 'common/mui/InputField';
 import { useState } from 'react';
 import { CommonProps } from './Types';
 
-const StepOne = ({ setFormStep }: CommonProps) => {
-	const [user, setUser] = useState({ fullName: '', displayName: '' });
-
+const StepOne = ({ setFormStep, setterFunction, data }: CommonProps) => {
 	const handleChange = (event: { target: { name: any; value: any } }) => {
 		const { name, value } = event.target;
-		setUser({ ...user, [name]: value });
+		setterFunction({ ...data, [name]: value });
 	};
 
 	const handleSubmit = (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		// on form submission update the form step and state of userData
 		setFormStep(2);
-		console.log('Form submitted', user);
 	};
 
 	return (
@@ -35,7 +32,7 @@ const StepOne = ({ setFormStep }: CommonProps) => {
 						id='fullName'
 						label='Full Name'
 						placeholder='Steve Jobs'
-						value={user.fullName}
+						value={data.fullName}
 						onChange={handleChange}
 					/>
 				</Grid>
@@ -44,7 +41,7 @@ const StepOne = ({ setFormStep }: CommonProps) => {
 						id='displayName'
 						label='Display Name'
 						placeholder='Steve'
-						value={user.displayName}
+						value={data.displayName}
 						onChange={handleChange}
 					/>
 				</Grid>

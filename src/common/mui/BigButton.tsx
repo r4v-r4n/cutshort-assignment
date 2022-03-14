@@ -4,11 +4,12 @@ type Props = {
 	icon: React.ReactNode;
 	title: string;
 	description: string;
+	onClick:()=>void;
 };
 
-const BigButton = ({ icon, title, description }: Props) => {
+const BigButton = ({ icon, title, description, onClick }: Props) => {
 	return (
-		<Button variant='outlined'>
+		<Button variant='outlined' onClick={onClick}>
 			<Box p={2}>
 				<Grid container spacing={2}>
 					<Grid item xs={12} container justifyContent='flex-start'>

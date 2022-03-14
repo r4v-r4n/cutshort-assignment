@@ -6,19 +6,16 @@ import InputField from 'common/mui/InputField';
 import { useState } from 'react';
 import { CommonProps } from './Types';
 
-const StepTwo = ({ setFormStep }: CommonProps) => {
-	const [workSpace, setWorkSpace] = useState({ workSpaceName: '', workSpaceUrl: '' });
-
+const StepTwo = ({ setFormStep, setterFunction, data }: CommonProps) => {
 	const handleChange = (event: { target: { name: any; value: any } }) => {
 		const { name, value } = event.target;
-		setWorkSpace({ ...workSpace, [name]: value });
+		setterFunction({ ...data, [name]: value });
 	};
 
 	const handleSubmit = (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		// on form submission update the form step and state of userData
 		setFormStep(3);
-		console.log('Form submitted', workSpace);
 	};
 
 	return (
@@ -34,8 +31,8 @@ const StepTwo = ({ setFormStep }: CommonProps) => {
 					<InputField
 						id='workSpaceName'
 						label='Workspace Name'
-						placeholder='Steve Jobs'
-						value={workSpace.workSpaceName}
+						placeholder='Eden'
+						value={data.workSpaceName}
 						onChange={handleChange}
 					/>
 				</Grid>
@@ -43,8 +40,8 @@ const StepTwo = ({ setFormStep }: CommonProps) => {
 					<InputField
 						id='workSpaceUrl'
 						label='Workspace URL'
-						placeholder='Steve'
-						value={workSpace.workSpaceUrl}
+						placeholder='Example'
+						value={data.workSpaceUrl}
 						onChange={handleChange}
 						hasAdornment
 						labelSubtext='(optional)'

@@ -4,21 +4,19 @@ import FormHeading from 'common/FormHeading';
 import BigButton from 'common/mui/BigButton';
 import FormButton from 'common/mui/FormButton';
 import GridContainer from 'common/mui/GridContainer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CommonProps } from './Types';
 
-const StepThree = ({ setFormStep }: CommonProps) => {
-	const [workSpace, setWorkSpace] = useState({ workSpaceName: '', workSpaceUrl: '' });
+const StepThree = ({ setFormStep, setterFunction, data }: CommonProps) => {
+	const [usageType, setUsageType] = useState('');
 
-	const handleChange = (event: { target: { name: any; value: any } }) => {
-		const { name, value } = event.target;
-		setWorkSpace({ ...workSpace, [name]: value });
-	};
+	useEffect(() => {
+		setterFunction({ ...data, usageType });
+	}, [data, usageType, setterFunction]);
 
 	const handleSubmit = (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		setFormStep(4);
-		console.log('Form submitted', workSpace);
 	};
 
 	return (
@@ -35,6 +33,7 @@ const StepThree = ({ setFormStep }: CommonProps) => {
 						icon={<User />}
 						title='For myself'
 						description='Write better. Think more clearly. Stay organized.'
+						onClick={() => setUsageType('self')}
 					/>
 				</Grid>
 				<Grid item xs={6}>
@@ -42,6 +41,7 @@ const StepThree = ({ setFormStep }: CommonProps) => {
 						icon={<Users />}
 						title='With my team myself'
 						description='Wikis, docs, tasks & projects, all in one place.'
+						onClick={() => setUsageType('team')}
 					/>
 				</Grid>
 
