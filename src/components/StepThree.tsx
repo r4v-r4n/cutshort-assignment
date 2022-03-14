@@ -12,7 +12,7 @@ const StepThree = ({ setFormStep, setterFunction, data }: CommonProps) => {
 
 	useEffect(() => {
 		setterFunction({ ...data, usageType });
-	}, [data, usageType, setterFunction]);
+	}, [usageType]);
 
 	const handleSubmit = (event: { preventDefault: () => void }) => {
 		event.preventDefault();
@@ -22,13 +22,13 @@ const StepThree = ({ setFormStep, setterFunction, data }: CommonProps) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<GridContainer>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormHeading
 						heading='How are you planning to use Eden?'
 						subheading="We'll streamline your setup experience accordingly."
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item xs={6} sm={4.5}>
 					<BigButton
 						icon={<User />}
 						title='For myself'
@@ -36,16 +36,16 @@ const StepThree = ({ setFormStep, setterFunction, data }: CommonProps) => {
 						onClick={() => setUsageType('self')}
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item xs={6} sm={4.5}>
 					<BigButton
 						icon={<Users />}
-						title='With my team myself'
+						title='With my team'
 						description='Wikis, docs, tasks & projects, all in one place.'
 						onClick={() => setUsageType('team')}
 					/>
 				</Grid>
 
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormButton>Create Workspace</FormButton>
 				</Grid>
 			</GridContainer>
