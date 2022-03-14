@@ -21,13 +21,13 @@ const StepOne = ({ setFormStep, setterFunction, data }: CommonProps) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<GridContainer>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormHeading
 						heading='Welcome! First things first...'
 						subheading='You can always change them later.'
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<InputField
 						id='fullName'
 						label='Full Name'
@@ -36,7 +36,7 @@ const StepOne = ({ setFormStep, setterFunction, data }: CommonProps) => {
 						onChange={handleChange}
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<InputField
 						id='displayName'
 						label='Display Name'
@@ -45,7 +45,7 @@ const StepOne = ({ setFormStep, setterFunction, data }: CommonProps) => {
 						onChange={handleChange}
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormButton>Create Workspace</FormButton>
 				</Grid>
 			</GridContainer>
