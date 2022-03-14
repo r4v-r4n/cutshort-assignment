@@ -8,7 +8,7 @@ import StepTwo from './StepTwo';
 
 const Form = () => {
 	const [formStep, setFormStep] = useState(1);
-	const steps = ['', '', '', ''];
+	const steps = ['1', '2', '3', '4'];
 
 	const [userDetails, setUserDetails] = useState({});
 
