@@ -1,0 +1,27 @@
+@import 'exports.module';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+html {
+	/* GLOBAL STYLING */
+	* {
+		padding: 0;
+		margin: 0;
+		//! debugg ghost elements
+		// background: #000 !important;
+		// color: #0f0 !important;
+		// outline: solid #f00 1px !important;
+	}
+
+	*:focus {
+		outline: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	/* BODY STYLING */
+	body {
+		font-family: 'Inter', sans-serif !important;
+		background: $background;
+	}
+}
