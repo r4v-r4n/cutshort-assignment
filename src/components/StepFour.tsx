@@ -18,19 +18,19 @@ const StepFour = ({ userDetails }: Props) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<GridContainer>
-				<Grid item xs={12} container justifyContent='center'>
+				<Grid item xs={12} sm={9} container justifyContent='center'>
 					<Avatar sx={{ bgcolor: '#664de5' }}>
 						<Check />
 					</Avatar>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormHeading
 						heading='Congratulation,Eren!'
 						subheading='You have completed the onboarding,you can start using Eden!'
 					/>
 				</Grid>
 
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormButton>Launch Eden</FormButton>
 				</Grid>
 			</GridContainer>
