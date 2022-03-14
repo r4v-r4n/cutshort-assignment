@@ -1,33 +1,43 @@
-import { Box, Button, Grid, Typography } from '@mui/material';
+import { Box, Button, Card, CardActionArea, Typography } from '@mui/material';
 
 type Props = {
 	icon: React.ReactNode;
 	title: string;
 	description: string;
-	onClick:()=>void;
+	onClick: () => void;
 };
 
 const BigButton = ({ icon, title, description, onClick }: Props) => {
 	return (
-		<Button variant='outlined' onClick={onClick}>
-			<Box p={2}>
-				<Grid container spacing={2}>
-					<Grid item xs={12} container justifyContent='flex-start'>
-						{icon}
-					</Grid>
-					<Grid item xs={12} container justifyContent='flex-start'>
+		<Card
+			elevation={0}
+			sx={{
+				border: 1,
+				borderColor: 'lightGray',
+			}}>
+			<CardActionArea onClick={onClick}>
+				<Box
+					display='flex'
+					flexDirection='column'
+					alignItems='flex-start'
+					justifyContent='flex-start'
+					gap={2}
+					p={2}>
+					<Box>{icon}</Box>
+					<Box>
+						{' '}
 						<Typography variant='subtitle2' color='black'>
 							{title}
 						</Typography>
-					</Grid>
-					<Grid item xs={12} container justifyContent='flex-start'>
-						<Typography variant='caption' color='GrayText'>
+					</Box>
+					<Box>
+						<Typography variant='caption' color='GrayText' align='left'>
 							{description}
 						</Typography>
-					</Grid>
-				</Grid>
-			</Box>
-		</Button>
+					</Box>
+				</Box>
+			</CardActionArea>
+		</Card>
 	);
 };
 
