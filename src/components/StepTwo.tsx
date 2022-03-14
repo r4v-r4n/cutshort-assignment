@@ -21,13 +21,13 @@ const StepTwo = ({ setFormStep, setterFunction, data }: CommonProps) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<GridContainer>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormHeading
 						heading="Let's set up a home for all your work"
 						subheading='You can always create another workspace later.'
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<InputField
 						id='workSpaceName'
 						label='Workspace Name'
@@ -36,7 +36,7 @@ const StepTwo = ({ setFormStep, setterFunction, data }: CommonProps) => {
 						onChange={handleChange}
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<InputField
 						id='workSpaceUrl'
 						label='Workspace URL'
@@ -47,7 +47,7 @@ const StepTwo = ({ setFormStep, setterFunction, data }: CommonProps) => {
 						labelSubtext='(optional)'
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sm={9}>
 					<FormButton>Create Workspace</FormButton>
 				</Grid>
 			</GridContainer>
