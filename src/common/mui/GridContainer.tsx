@@ -8,7 +8,7 @@ type Props = {
 
 const GridContainer = ({ children }: Props) => {
 	return (
-		<Grid container spacing={2}>
+		<Grid container spacing={2} justifyContent='center'>
 			{children}
 		</Grid>
 	);
