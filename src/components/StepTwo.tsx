@@ -1,9 +1,8 @@
-import { Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import FormHeading from 'common/FormHeading';
 import FormButton from 'common/mui/FormButton';
 import GridContainer from 'common/mui/GridContainer';
 import InputField from 'common/mui/InputField';
-import { useState } from 'react';
 import { CommonProps } from './Types';
 
 const StepTwo = ({ setFormStep, setterFunction, data }: CommonProps) => {

@@ -1,7 +1,6 @@
 import { Avatar, Grid } from '@mui/material';
-import { Check, User, Users } from 'assets';
+import { Check } from 'assets';
 import FormHeading from 'common/FormHeading';
-import BigButton from 'common/mui/BigButton';
 import FormButton from 'common/mui/FormButton';
 import GridContainer from 'common/mui/GridContainer';
 

@@ -1,19 +1,20 @@
-import { Box, Button, Card, CardActionArea, Typography } from '@mui/material';
-
+import { Box, Card, CardActionArea, Icon, Typography } from '@mui/material';
+import colors from 'styles/exports.module.scss';
 type Props = {
 	icon: React.ReactNode;
 	title: string;
 	description: string;
+	active: boolean;
 	onClick: () => void;
 };
 
-const BigButton = ({ icon, title, description, onClick }: Props) => {
+const BigButton = ({ icon, title, description, active, onClick }: Props) => {
 	return (
 		<Card
 			elevation={0}
 			sx={{
 				border: 1,
-				borderColor: 'lightGray',
+				borderColor: active ? colors?.palettePrimaryMain : 'lightgray',
 			}}>
 			<CardActionArea onClick={onClick}>
 				<Box
@@ -23,7 +24,9 @@ const BigButton = ({ icon, title, description, onClick }: Props) => {
 					justifyContent='flex-start'
 					gap={2}
 					p={2}>
-					<Box>{icon}</Box>
+					<Box>
+						<Icon color={active ? 'primary' : 'inherit'}>{icon}</Icon>
+					</Box>
 					<Box>
 						{' '}
 						<Typography variant='subtitle2' color='black'>

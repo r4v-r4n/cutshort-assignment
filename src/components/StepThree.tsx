@@ -33,6 +33,7 @@ const StepThree = ({ setFormStep, setterFunction, data }: CommonProps) => {
 						icon={<User />}
 						title='For myself'
 						description='Write better. Think more clearly. Stay organized.'
+						active={usageType === 'self'}
 						onClick={() => setUsageType('self')}
 					/>
 				</Grid>
@@ -42,6 +43,7 @@ const StepThree = ({ setFormStep, setterFunction, data }: CommonProps) => {
 						title='With my team'
 						description='Wikis, docs, tasks & projects, all in one place.'
 						onClick={() => setUsageType('team')}
+						active={usageType === 'team'}
 					/>
 				</Grid>
 
