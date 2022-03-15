@@ -7,7 +7,7 @@ type Props = {
 
 const FormHeading = ({ heading, subheading }: Props) => (
 	<>
-		<Typography variant='h5' align='center'>
+		<Typography variant='h6' align='center'>
 			{heading}
 		</Typography>
 		<Typography variant='subtitle2' color='textSecondary' align='center'>
