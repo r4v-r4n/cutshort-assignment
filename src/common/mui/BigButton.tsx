@@ -22,7 +22,7 @@ const BigButton = ({ icon, title, description, active, onClick }: Props) => {
 					flexDirection='column'
 					alignItems='flex-start'
 					justifyContent='flex-start'
-					gap={2}
+					gap={1}
 					p={2}>
 					<Box>
 						<Icon color={active ? 'primary' : 'inherit'}>{icon}</Icon>

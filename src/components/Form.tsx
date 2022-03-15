@@ -1,5 +1,6 @@
-import { Box, Container, StepLabel, Stepper, Step } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { Logo } from 'assets';
+import CustomizedStepper from 'common/mui/CustomizedStepper';
 import { useState } from 'react';
 import StepFour from './StepFour';
 import StepOne from './StepOne';
@@ -8,7 +9,6 @@ import StepTwo from './StepTwo';
 
 const Form = () => {
 	const [formStep, setFormStep] = useState(1);
-	const steps = ['1', '2', '3', '4'];
 
 	const [userDetails, setUserDetails] = useState({});
 
@@ -42,13 +42,7 @@ const Form = () => {
 				<img src={Logo} alt='logo' />
 			</Box>
 			<Box my={6}>
-				<Stepper activeStep={formStep - 1} alternativeLabel>
-					{steps.map((label) => (
-						<Step key={label}>
-							<StepLabel></StepLabel>
-						</Step>
-					))}
-				</Stepper>
+				<CustomizedStepper formStep={formStep} />
 			</Box>
 			{formSwitcher()}
 		</Container>
