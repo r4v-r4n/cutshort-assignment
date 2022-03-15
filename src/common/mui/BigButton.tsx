@@ -15,6 +15,7 @@ const BigButton = ({ icon, title, description, active, onClick }: Props) => {
 			sx={{
 				border: 1,
 				borderColor: active ? colors?.palettePrimaryMain : 'lightgray',
+				height: '100%',
 			}}>
 			<CardActionArea onClick={onClick}>
 				<Box
